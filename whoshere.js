@@ -1,10 +1,11 @@
+Attendees = new Mongo.Collection("attendees");
+
 if (Meteor.isClient) {
 
     Template.attendeeList.helpers({
-        attendees: [
-            {name: 'Mark Waite'},
-            {name: 'Another attendee'}
-        ]
+        attendees: function () {
+            return Attendees.find({});
+        }
     });
 
     Template.attendeeList.events({

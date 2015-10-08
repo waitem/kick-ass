@@ -14,7 +14,7 @@
 <template name="attendeeList">
     <ul>
         {{#each attendees}}
-            <li>{{name}}</li>
+            <li>{{name}} (Added at: {{createdAt}})</li>
         {{/each}}
     </ul>
 </template>
