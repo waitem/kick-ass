@@ -8,10 +8,25 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.attendeeList.events({
-        'click button': function () {
-            // placeholder for now ...
+    Template.registerAttendee.events({
+        'submit .registerAttendee': function (event) {
+            // Prevent default browser form submit
+            event.preventDefault();
+
+            console.log(event);
+            // Get value from form element
+            var text = event.target.attendeeName.value;
+
+            // Insert an attendee into the collection
+            Attendees.insert({
+                name: text,
+                createdAt: new Date() // current time
+            });
+
+            // Clear form
+            event.target.attendeeName.value = "";
         }
+
     });
 }
 

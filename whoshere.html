@@ -9,6 +9,8 @@
 
 {{> attendeeList}}
 
+{{> registerAttendee }}
+
 </body>
 
 <template name="attendeeList">
@@ -17,4 +19,13 @@
             <li>{{name}} (Added at: {{createdAt}})</li>
         {{/each}}
     </ul>
+</template>
+
+<template name="registerAttendee">
+    <p>Attendee name missing from the list?</p>
+
+    <form class="registerAttendee">
+        <label for="attendeeName">Add it here:</label>
+        <input id="attendeeName" type="text" name="attendeeName" placeholder="Attendee name"/>
+    </form>
 </template>
