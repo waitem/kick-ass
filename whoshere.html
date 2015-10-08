@@ -1,14 +1,20 @@
 <head>
-  <title>whoshere</title>
+    <title>Who's here?</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+<h1>Welcome to Show and Tell!</h1>
 
-  {{> hello}}
+<h2>Who's here tonight:</h2>
+
+{{> attendeeList}}
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="attendeeList">
+    <ul>
+        {{#each attendees}}
+            <li>{{name}}</li>
+        {{/each}}
+    </ul>
 </template>
