@@ -4,7 +4,7 @@ if (Meteor.isClient) {
 
     Template.attendeeList.helpers({
         attendees: function () {
-            return Attendees.find({});
+            return Attendees.find({}, {sort: {"createdAt": -1}});
         }
     });
 
