@@ -12,8 +12,10 @@
 
 </body>
 
+<!-- Blaze template -->
 <template name="attendeeList">
     <ul>
+        {{! Spacebars markup }}
         {{#each attendees}}
             <li>{{name}} (Added at: {{createdAt}})</li>
         {{/each}}
